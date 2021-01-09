@@ -1,6 +1,6 @@
 import React from 'react';
-import { TypeLabel } from '../components/atoms/TypeLabel';
+import { PokeCard } from '../components/molecules/PokeCard';
 
 export default function index() {
-  return <TypeLabel />
+  return <PokeCard />
 }
