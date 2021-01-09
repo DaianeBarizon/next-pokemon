@@ -1,9 +1,6 @@
 import React from 'react';
+import { TypeLabel } from '../components/atoms/TypeLabel';
 
-// import { Container } from './styles';
-
-function pages() {
-  return <p>Hello Next!</p>
+export default function index() {
+  return <TypeLabel />
 }
-
-export default pages;
