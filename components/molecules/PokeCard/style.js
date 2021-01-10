@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const PokecardWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background: ${({ background }) => background || '#26D97D'};
 `;
 
@@ -12,11 +10,15 @@ export const CardHolder = styled.div`
     width: 100;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 5px;
+    justify-content: left;
+    padding: 10px;
+
+    div{
+      padding: 20px;
+    }
 
     img{
-      max-width: 30%;
+      max-width: 15%;
     }
 
     p{

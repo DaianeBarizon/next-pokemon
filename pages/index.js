@@ -1,6 +1,13 @@
 import React from 'react';
-import { PokeCard } from '../components/molecules/PokeCard';
+import { PokeList } from '../components/organism/PokeList';
+import usePokemons from '../hooks/usePokemons';
 
 export default function index() {
-  return <PokeCard />
+  const { PokemonsList } = usePokemons();
+
+  return (
+    <>
+      <PokeList PokemonsArray={PokemonsList}/>
+    </>
+  );
 }
