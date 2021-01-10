@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getAllPokemons = () => {
   return new Promise((resolve, reject) => {
-    return axios.get('https://pokeapi.co/api/v2/pokemon?limit=999')
+    return axios.get(`${process.env.NEXT_PUBLIC_API_POKEMON_URL}pokemon?limit=999`)
     .then((data) => resolve(data))
     .catch((error) => reject(error));
   });
