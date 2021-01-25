@@ -9,9 +9,9 @@ export const getAllPokemons = () => {
 };
 
 //requisição dinâmica
-export const getPokemonsByUrl = (url) => {
+export const getPokemonsByUrl = (url: string) => {
   return new Promise((resolve, reject) => {
-    !url && reject('url não existente ou em branco!')
+    !url && reject('url não existente ou em branco!');
     return axios.get(url)
     .then((data) => resolve(data))
     .catch((error) => reject(error));

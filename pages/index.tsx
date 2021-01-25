@@ -1,8 +1,8 @@
 import React from 'react';
 import { PokeList } from '../components/organism/PokeList';
-import usePokemons from '../hooks/usePokemons';
+import { usePokemons }  from '../hooks/usePokemons';
 
-export default function index() {
+const index = () => {
   const { PokemonsList } = usePokemons();
 
   return (
@@ -11,3 +11,5 @@ export default function index() {
     </>
   );
 }
+
+export default index;
