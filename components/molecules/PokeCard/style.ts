@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { whiteColor, successColor } from '../../../helpers/colors';
 
 interface IPokecardWrapperProps {
   background?: string;
@@ -12,7 +13,7 @@ export const PokecardWrapper = styled.div<IPokecardWrapperProps>`
     height: 300px;
     margin: 20px;
     border-radius: 20px;
-    background: ${({ background }) => background || '#26D97D'};
+    background: ${({ background }) => background || successColor};
 `;
 
 export const CardHolder = styled.div`
@@ -27,13 +28,13 @@ export const CardHolder = styled.div`
     }
 
     p{
-      color: ${({ color }) => color || '#FFFFFF'};
+      color: ${({ color }) => color || whiteColor};
       font-size: 24px;
       font-weight: bold;
     }
 
     span{
-      color: ${({ color }) => color || '#FFFFFF'};
+      color: ${({ color }) => color || whiteColor};
       font-size: 15px;
     }
 
