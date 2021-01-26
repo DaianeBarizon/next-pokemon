@@ -3,8 +3,29 @@ import { PokeCard } from '../../molecules/PokeCard';
 import { Loading } from './style';
 import { Row, Col } from 'antd';
 import { IPokemon } from '../../../types';
+import {
+  blueBackgroundColor,
+  waterGreenBackgroundColor,
+  lightGreenBackgroundColor,
+  yellowBackgroundColor,
+  orangeBackgroundColor,
+  purpleBackgroundColor,
+  darkPinkBackgroundColor,
+  pinkBackgroundColor,
+  redBackgroundColor,
+} from '../../../helpers/colors';
 
-const colors = ['#0088FE', '#00C49F', '#26D97D', '#FFBB28', '#FF8042', '#C25FE7', '#F54EBE', '#F54E65', '#CD1212'];
+const colors = [
+  blueBackgroundColor,
+  waterGreenBackgroundColor,
+  lightGreenBackgroundColor,
+  yellowBackgroundColor,
+  orangeBackgroundColor,
+  purpleBackgroundColor,
+  darkPinkBackgroundColor,
+  pinkBackgroundColor,
+  redBackgroundColor
+];
 const newArrColors = [];
 
 for (var i = 0; i < 999; i++) {

@@ -3,20 +3,20 @@ import { getAllPokemons } from '../../utils/api/PokemonApi';
 import { IPokemon } from '../../types';
 
 const PokemonsContext = React.createContext<{
-  state: IPokemon | null;
-  setState: React.Dispatch<React.SetStateAction<IPokemon>>;
+  state: IPokemon[];
+  setState: React.Dispatch<React.SetStateAction<IPokemon[]>>;
 }>({
-  state: null,
+  state: [],
   setState: () => {},
 });
 
-type AuthProviderProps = unknown;
+type PokemonsProviderProps = unknown;
 
-const PokemonsProvider:React.FC<AuthProviderProps> = props => {
-  const [state, setState] = useState<IPokemon | null>(null);
+const PokemonsProvider:React.FC<PokemonsProviderProps> = props => {
+  const [state, setState] = useState<IPokemon[] | []>([]);
 
   useEffect(() => {
-    getAllPokemons().then((data) => setState(data.data.results));
+    getAllPokemons().then((response: any) => setState(response.data.results));
   }, [])
 
   return (

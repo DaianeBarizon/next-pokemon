@@ -3,18 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { PokecardWrapper, CardHolder, ButtonWrapper } from './style';
 import { TypeLabel } from '../../atoms/TypeLabel';
 import { getPokemonsByUrl } from '../../../utils/api/PokemonApi';
-import { IPokemon, IPokeData } from '../../../types';
-
-interface IPokeCardProps {
-  pokemon: IPokemon;
-  background: string;
-}
+import { IPokeData, IPokeCardProps } from '../../../types';
 
 export const PokeCard: React.FC<IPokeCardProps> = ({ pokemon, background }) => {
-  const [pokeData, setPokeData] = useState<IPokeData | null>();
+  const [pokeData, setPokeData] = useState<IPokeData>();
 
   useEffect(() => {
-    getPokemonsByUrl(pokemon.url).then(data => setPokeData(data.data)).catch((error) => error);
+    getPokemonsByUrl(pokemon.url).then((response: any) => setPokeData(response.data));
   }, []);
 
   return (
