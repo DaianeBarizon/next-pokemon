@@ -8,53 +8,58 @@ export interface IPokeCardProps {
   background: string;
 }
 
-export interface IAbility {
-  name?: string;
-  url?: string;
-}
-
 export interface IAbilities {
-  ability: IAbility;
+  ability: IPokemon;
   is_hidden: boolean;
   slot: number;
 }
 
-export interface IForm {
-  name?: string;
-  url?: string;
-}
-
 export interface IGameIndices {
   game_index: number;
-  version: {
-    name: string;
-    url: string;
-  }
+  version: IPokemon;
 }
 
 export interface IMoves {
-  move: {
-    name: string;
-    url: string
- };
+  move: IPokemon;
   version_group_details: [
    {
       level_learned_at: number;
-      move_learn_method: {
-        name: string;
-        url: string;
-     };
-      version_group: {
-       name: string;
-       url: string;
-     }
+      move_learn_method: IPokemon;
+      version_group: IPokemon;
    },
  ]
 }
 
-export interface ISpecies {
-  name: string;
-  url: string;
+export interface IGenerationI {
+  back_default: string;
+  back_gray: string;
+  front_default: string;
+  front_gray: string;
+}
+
+export interface IGeneration {
+  back_default: string;
+  back_shiny: string;
+  front_default: string;
+  front_shiny: string;
+}
+
+export interface IGenerationIV {
+  back_default: string;
+  back_female: null;
+  back_shiny: string;
+  back_shiny_female: null;
+  front_default: string;
+  front_female: null;
+  front_shiny: string;
+  front_shiny_female: null;
+}
+
+export interface IGenerationVI {
+  front_default: string;
+  front_female: null;
+  front_shiny: string;
+  front_shiny_female: null;
 }
 
 export interface ISprites {
@@ -77,101 +82,30 @@ export interface ISprites {
   };
   versions: {
     'generation-i': {
-      'red-blue': {
-        back_default: string;
-        back_gray: string;
-        front_default: string;
-        front_gray: string;
-      };
-      yellow: {
-        back_default: string;
-        back_gray: string;
-        front_default: string;
-        front_gray: string;
-      }
+      'red-blue': IGenerationI;
+      yellow: IGenerationI;
     };
     'generation-ii': {
-      crystal: {
-        back_default: string;
-        back_shiny: string;
-        front_default: string;
-        front_shiny: string;
-      };
-      gold: {
-        back_default: string;
-        back_shiny: string;
-        front_default: string;
-        front_shiny: string;
-      };
-      silver: {
-        back_default: string;
-        back_shiny: string;
-        front_default: string;
-        front_shiny: string;
-      }
+      crystal: IGeneration;
+      gold: IGeneration;
+      silver: IGeneration;
     };
     'generation-iii': {
       emerald: {
         front_default: string;
         front_shiny: string;
       };
-      'firered-leafgreen': {
-        back_default: string;
-        back_shiny: string;
-        front_default: string;
-        front_shiny:string;
-      };
-      'ruby-sapphire': {
-        back_default: string;
-        back_shiny: string;
-        front_default:string;
-        front_shiny: string;
-      }
+      'firered-leafgreen': IGeneration;
+      'ruby-sapphire': IGeneration;
     };
     'generation-iv': {
-      'diamond-pearl': {
-        back_default: string;
-        back_female: null;
-        back_shiny: string;
-        back_shiny_female: null;
-        front_default: string;
-        front_female: null;
-        front_shiny: string;
-        front_shiny_female: null;
-      };
-      'heartgold-soulsilver': {
-        back_default: string;
-        back_female: null;
-        back_shiny: string;
-        back_shiny_female: null;
-        front_default: string;
-        front_female: null;
-        front_shiny: string;
-        front_shiny_female: null;
-      };
-      platinum: {
-        back_default: string;
-        back_female: null;
-        back_shiny: string;
-        back_shiny_female: null;
-        front_default: string;
-        front_female: null;
-        front_shiny: string;
-        front_shiny_female: null;
-      }
+      'diamond-pearl': IGenerationIV;
+      'heartgold-soulsilver': IGenerationIV;
+      platinum: IGenerationIV;
     };
     'generation-v': {
       'black-white': {
-        animated: {
-          back_default: string;
-          back_female: null;
-          back_shiny: string;
-          back_shiny_female: null;
-          front_default: string;
-          front_female: null;
-          front_shiny: string;
-          front_shiny_female: null;
-        };
+        animated: IGenerationIV;
         back_default: string;
         back_female: null;
         back_shiny: string;
@@ -183,30 +117,15 @@ export interface ISprites {
       }
     };
     'generation-vi': {
-      'omegaruby-alphasapphire': {
-        front_default: string;
-        front_female: null;
-        front_shiny: string;
-        front_shiny_female: null;
-      };
-      'x-y': {
-        front_default: string;
-        front_female: null;
-        front_shiny: string;
-        front_shiny_female: null;
-      }
+      'omegaruby-alphasapphire': IGenerationVI;
+      'x-y': IGenerationVI;
     };
     'generation-vii': {
       icons: {
         front_default: string;
         front_female: null;
       };
-      'ultra-sun-ultra-moon': {
-        front_default: string;
-        front_female: null;
-        front_shiny: string;
-        front_shiny_female: null;
-      }
+      'ultra-sun-ultra-moon': IGenerationVI;
     };
     'generation-viii': {
       icons: {
@@ -220,24 +139,18 @@ export interface ISprites {
 export interface IStats {
   base_stat: number;
   effort: number;
-    stat: {
-      name: string;
-      url: string;
-  }
+    stat: IPokemon;
 }
 
 export interface ITypes {
   slot: number;
-  type: {
-    name: string;
-    url: string;
-  }
+  type: IPokemon;
 }
 
 export interface IPokeData {
-  abilities: [IAbilities];
+  abilities: [IAbilities] | null;
   base_experience: number;
-  forms: [IForm];
+  forms: [IPokemon];
   game_indices: [IGameIndices];
   height: number;
   held_items: [];
@@ -247,7 +160,7 @@ export interface IPokeData {
   moves: [IMoves];
   name: string;
   order: number;
-  species: ISpecies;
+  species: IPokemon;
   sprites: ISprites;
   stats: [IStats];
   types: [ITypes];
